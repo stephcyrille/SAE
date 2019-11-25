@@ -15,7 +15,7 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('nom');
             $table->string('acronyme');
             $table->integer('responsable_id')->unsigned()->nullable();
             $table->foreign('responsable_id')->references('id')->on('profiles')->onDelete('cascade');
