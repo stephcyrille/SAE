@@ -33,7 +33,7 @@
             </div>
 
             <ul class="list-unstyled components">
-                <li class="active">
+                <li class="">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-home"></i>
                         Home
@@ -59,7 +59,7 @@
                         <i class="fas fa-briefcase"></i>
                         Documents
                     </a>
-                    <a href="#">
+                    <a href="{{ route('all_files') }}">
                         <i class="fas fa-copy"></i>
                         Fichiers
                     </a>

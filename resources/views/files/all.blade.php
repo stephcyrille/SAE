@@ -39,38 +39,42 @@
     <div class="row">
         <div class="col-12">
             <div class="container">
-                <h2 class="panel-heading">Tous les services</h2>
-                <a href="{{ route('add_service') }}" class="btn btn-success btn-md" style="margin-bottom: 30px">Ajouter un service</a>
+                <h2 class="panel-heading">Tous les fichiers</h2>
+                <a href="{{ route('add_file') }}" class="btn btn-success btn-md" style="margin-bottom: 30px">Ajouter un fichier</a>
                 <div class="card pb-10 pt-10 mt-15" style="padding-top: 30px; padding: 30px 50px 60px 30px">
                     <table id="example" class="mdl-data-table" style="width:100%; margin: 20px">
                         <thead>
                             <tr>
                                 <th>Nom</th>
-                                <th>Acronyme</th>
-                                <th>Responsable</th>
+                                <th>Tescription</th>
+                                <th>Type</th>
+                                <th>Format</th>
+                                <th>Loaclisation</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($services as $item)
+                            @foreach ($fichiers as $item)
                               <tr>
                                 <td> {{ $item->nom }} </td>
-                                <td> {{ $item->acronyme }} </td>
-                                <td> {{ $item->responsable_id }} </td>
+                                <td> {{ $item->description }} </td>
+                                <td> {{ $item->type }} </td>
+                                <td> {{ $item->format }} </td>
+                                <td> {{ $item->localisation }} </td>
                                 <td> 
-                                  <div class="btn-group">
-                                    <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hzaspopup="true" aria-expanded="false">
-                                      Actions
-                                    </button>
-                                    <div class="dropdown-menu">
-                                      <a href="#" class="dropdown-item">
-                                        Visualiser
-                                      </a>
-                                      <a href="#" class="dropdown-item">
-                                        Supprimer
-                                      </a>
-                                    </div>
-                                  </div>   
+                                    <div class="btn-group">
+                                      <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hzaspopup="true" aria-expanded="false">
+                                        Actions
+                                      </button>
+                                      <div class="dropdown-menu">
+                                        <a href="#" class="dropdown-item">
+                                          Visualiser
+                                        </a>
+                                        <a href="#" class="dropdown-item">
+                                          Supprimer
+                                        </a>
+                                      </div>
+                                    </div>    
                                 </td>
                               </tr>
                             @endforeach
