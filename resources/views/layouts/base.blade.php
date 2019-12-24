@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ route('all_users') }}">
                         <i class="fas fa-users"></i>
                         Gestion des utilisateurs
                     </a>
@@ -107,7 +107,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="#"><i class="fas fa-power-off"></i> Déconnexion</a>
+                          <a class="nav-link" href="{{ route('logout') }}"><i class="fas fa-power-off"></i> Déconnexion</a>
                       </li> 
                   </ul>
               </div>

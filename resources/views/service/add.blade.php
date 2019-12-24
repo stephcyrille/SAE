@@ -43,11 +43,11 @@
                                 <select name="responsable_id" class="form-control" id="responsable_id">
                                     <option value="" disabled>Selectionner le responsabzle du service</option>
                                     @foreach ($profiles as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>                                        
+                                        <option value="{{ $item->id }}">{{ $item->first_name.' '.$item->last_name }}</option>                                        
                                     @endforeach
                                 </select>
                                 <div style="width: 100%; text-align: left; color: red">
-                                    <i style="font-size: 9px"> {{ $errors->first('responsabzle_id') }} </i>
+                                    <i style="font-size: 9px"> {{ $errors->first('responsable_id') }} </i>
                                 </div>
                             </div>
                         </div>

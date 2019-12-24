@@ -56,7 +56,8 @@
                               <tr>
                                 <td> {{ $item->nom }} </td>
                                 <td> {{ $item->acronyme }} </td>
-                                <td> {{ $item->responsable_id }} </td>
+                                <td> {{ $item->profile->first_name.' '.$item->profile->last_name }} </td>
+                                {{-- <td> {{ $item->responsable->first_name.' '.$item->responsable->last_name }} </td> --}}
                                 <td> 
                                   <div class="btn-group">
                                     <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-hzaspopup="true" aria-expanded="false">

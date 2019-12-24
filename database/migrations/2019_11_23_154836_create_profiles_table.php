@@ -23,8 +23,8 @@ class CreateProfilesTable extends Migration
             $table->string('roles');
             $table->string('picture_path');
             $table->integer('user_id')->unsigned()->nullable();
-            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->integer('service_id')->unsigned()->nullable();
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

@@ -36,6 +36,7 @@ class FileController extends Controller
             'type'=> 'required',
             'piece'=> 'required|max:20024',
         ]); 
+
         
    
         $file = $request->file('piece');
@@ -43,48 +44,48 @@ class FileController extends Controller
         if($request->get('type')==='Audio'){
             $file_name = 'AUDIO-'.time(); 
             $path = '/medias/audios/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/audios'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/audios'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         else if($request->get('type')==='Compresse'){
             $file_name = 'COMPRESSE-'.time(); 
             $path = '/medias/compresses/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/compresses'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/compresses'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         else if($request->get('type')==='Document'){
             $file_name = 'DOCUMENT-'.time(); 
             $path = '/medias/documents/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/documents'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/documents'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         else if($request->get('type')==='Executable'){
             $file_name = 'EXECUTABLE-'.time(); 
             $path = '/medias/executables/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/executables'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/executables'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         else if($request->get('type')==='Image'){
             $file_name = 'IMAGE-'.time(); 
             $path = '/medias/images/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/images'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/images'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         else if($request->get('type')==='Video'){
             $file_name = 'MOVIE-'.time(); 
             $path = '/medias/movies/'.$file_name.'.'.$request->file('piece')->getClientOriginalExtension();
-            $file->move(public_path('medias/movies'), ($file_name.'.'.$request->file()->getClientOriginalExtension()));
+            $file->move(public_path('medias/movies'), ($file_name.'.'.$request->file('piece')->getClientOriginalExtension()));
             // dd($path);
         }   
         $value = [
             'nom' => $request->get('nom'),
-            'description' => $request->file('description'),
-            'type' => $request->file('type'),
+            'description' => $request->get('description'),
+            'type' => $request->get('type'),
             'format' => $request->file('piece')->getClientOriginalExtension(),
             'localisation' => $path,
         ];
         
-        Fichier::create($data);
+        Fichier::create($value);
 
         return redirect()->route('all_files');
     }

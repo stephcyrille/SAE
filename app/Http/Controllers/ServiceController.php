@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Profile;
 use App\Service;
 
 
@@ -12,7 +13,6 @@ class ServiceController extends Controller
     public function list()
     {
         $services = Service::all();
-        
         $context = [
             'services'=> $services
         ];
@@ -22,7 +22,7 @@ class ServiceController extends Controller
     
     public function add()
     {
-        $profiles = User::all();
+        $profiles = Profile::all();
 
         $context = [
             'profiles' => $profiles

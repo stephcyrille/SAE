@@ -9,8 +9,8 @@ class Service extends Model
 {
     protected $guarded = [];
 
-    public function responsable()
+    public function profile()
     {
-        return $this->belongsTo(Profile::class);
+        return $this->belongsTo(Profile::class, 'responsable_id');
     }
 }
